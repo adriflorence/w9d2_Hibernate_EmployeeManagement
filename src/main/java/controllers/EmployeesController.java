@@ -7,21 +7,21 @@ import spark.template.velocity.VelocityTemplateEngine;
 
 import java.util.HashMap;
 import static spark.Spark.get;
+import static spark.SparkBase.staticFileLocation;
 
 public class EmployeesController {
 
-    //    ENTRY POINT
-    public static void main(String[] args) {
+    public EmployeesController() {
+        this.setupEndPoints();
+    }
 
-        ManagersController managersController = new ManagersController();
+    private void setupEndPoints(){
 
-        Seeds.seedData();
-
-        get("/employees", (req, res) -> {
-            HashMap<String, Object> model = new HashMap<>();
-            model.put("template", "templates/employees/index.vtl");
-            return new ModelAndView(model, "templates/layout.vtl");
-        }, new VelocityTemplateEngine());
+    get("/employees", (req, res) -> {
+        HashMap<String, Object> model = new HashMap<>();
+        model.put("template", "templates/employees/index.vtl");
+        return new ModelAndView(model, "templates/layout.vtl");
+    }, new VelocityTemplateEngine());
 
 
     }

@@ -38,7 +38,7 @@ public class Department {
         this.title = title;
     }
 
-    @OneToMany(mappedBy = "department")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department")
     public Set<Employee> getEmployees() {
         return employees;
     }
