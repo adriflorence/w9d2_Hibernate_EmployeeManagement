@@ -20,6 +20,12 @@
             <td>$manager.getSalary()</td>
             <td>$manager.getDepartment().getTitle()</td>
             <td>$manager.getBudget()</td>
+            <td><form action="managers/$manager.getId()" method="get">
+                <input type="submit" value="update" class="button"></form>
+            </td>
+            <td><form action="managers/$manager.getId()/delete" method="post">
+                <input type="submit" value="Delete" class="button">
+            </form></td>
         </tr>
         #end
     </table>

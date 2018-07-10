@@ -1,0 +1,25 @@
+<p class="pageHeader"> All Departments</p>
+
+<div>
+    <a href="/departments/new" class="button center">Add new Department</a>
+</div>
+
+<div class="container">
+    <table>
+        <tr>
+            <th>Department Title</th>
+        </tr>
+        #foreach($department in $departments)
+        <tr>
+            <td>$department.getTitle()</td>
+            <td><form action="departments/$department.getId()" method="get">
+                <input type="submit" value="update" class="button"></form>
+            </td>
+            <td><form action="departments/$department.getId()/delete" method="post">
+                <input type="submit" value="Delete" class="button">
+            </form></td>
+        </tr>
+        #end
+    </table>
+
+</div>
