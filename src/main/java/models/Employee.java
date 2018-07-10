@@ -60,7 +60,7 @@ public abstract class Employee {
         this.salary = salary;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id", nullable = false)
     public Department getDepartment() {
         return department;

@@ -7,7 +7,6 @@ import java.util.Set;
 @Table(name="departments")
 public class Department {
 
-
     private int id;
     private String title;
     private Set<Employee> employees;
@@ -46,4 +45,16 @@ public class Department {
     public void setEmployees(Set<Employee> employees) {
         this.employees = employees;
     }
+
+    public String managerName() {
+        String managerName = "";
+        for(Employee employee : employees) {
+            if(employee instanceof Manager) {
+                managerName += employee.getFirstName() + " " + employee.getLastName();
+            }
+        }
+        return managerName;
+    }
+
+
 }

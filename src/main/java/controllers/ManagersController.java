@@ -23,6 +23,7 @@ public class ManagersController {
 
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
 
+        // DISPLAY ALL MANAGERS
         get("/managers", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
             List<Manager> managers = DBHelper.getAll(Manager.class);

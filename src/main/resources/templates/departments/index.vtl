@@ -8,10 +8,12 @@
     <table>
         <tr>
             <th>Department Title</th>
+            <th>Department Manager</th>
         </tr>
         #foreach($department in $departments)
         <tr>
             <td>$department.getTitle()</td>
+            <td>$department.managerName()</td>
             <td><form action="departments/$department.getId()" method="get">
                 <input type="submit" value="update" class="button"></form>
             </td>
